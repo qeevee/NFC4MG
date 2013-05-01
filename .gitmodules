@@ -1,0 +1,3 @@
+[submodule "NFC4MobileGaming"]
+	path = NFC4MobileGaming
+	url = https://github.com/shubhambansal/NFC4MG.git
