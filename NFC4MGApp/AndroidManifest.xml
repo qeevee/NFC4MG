@@ -35,6 +35,9 @@
         <activity android:name="com.uni.bonn.nfc4mgtest.GPSTagActivity" >
         </activity>
         
+         <!-- Activity to operate with Bluetooth Nfc Tags -->
+        <activity android:name="com.uni.bonn.nfc4mgtest.BluetoothTagActivity" >
+        </activity>
         
         
     </application>

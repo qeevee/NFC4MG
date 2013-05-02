@@ -60,5 +60,5 @@ public class NfcTagUtility {
 		} else {
 			return "UNKNOWN";
 		}
-	}
+	}	
 }

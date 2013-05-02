@@ -11,19 +11,19 @@ import com.uni.bonn.nfc4mg.TextRecord;
 import com.uni.bonn.nfc4mg.constants.TagConstants;
 import com.uni.bonn.nfc4mg.exception.NfcTagException;
 import com.uni.bonn.nfc4mg.exception.TagModelException;
-import com.uni.bonn.nfc4mg.tagmodels.GPSTagModel;
+import com.uni.bonn.nfc4mg.tagmodels.WiFiTagModel;
 import com.uni.bonn.nfc4mg.utility.NfcReadWrite;
 
 /**
- * Class to deal with GPS Tag type. User has to create object of this class in
- * order to deal with any operation related to info tags.
+ * Class to deal with Bluetooth Tag type. User has to create object of this
+ * class in order to deal with any operation related to info tags.
  * 
  * @author shubham
  * 
  */
-public class GpsTag {
+public class WiFiTag {
 
-	public boolean write2Tag(GPSTagModel model, Tag tag)
+	public boolean write2Tag(WiFiTagModel model, Tag tag)
 			throws TagModelException, IOException, FormatException,
 			NfcTagException {
 
@@ -38,31 +38,30 @@ public class GpsTag {
 			throw new TagModelException("Tag Id is not defined.");
 
 		// id prefix check
-		if (!id.startsWith(TagConstants.TAG_TYPE_GPS_PREFIX))
-			model.setId(TagConstants.TAG_TYPE_GPS_PREFIX + model.getId());
-
+		if (!id.startsWith(TagConstants.TAG_TYPE_WIFI_PREFIX))
+			model.setId(TagConstants.TAG_TYPE_WIFI_PREFIX + model.getId());
 
 		NdefRecord records[] = new NdefRecord[3];
 		records[0] = TextRecord.createRecord(model.getId());
-		records[1] = TextRecord.createRecord(model.getLatitude());
-		records[2] = TextRecord.createRecord(model.getLongitude());
+		records[1] = TextRecord.createRecord(model.getSsid());
+		records[2] = TextRecord.createRecord(model.getPassword());
 
 		NdefMessage info_msg = new NdefMessage(records);
 		NfcReadWrite.writeToNfc(info_msg, tag);
 		return true;
 	}
 
-	public GPSTagModel readTagData(Tag tag) throws IOException,
+	public WiFiTagModel readTagData(Tag tag) throws IOException,
 			FormatException {
 
-		GPSTagModel model = new GPSTagModel();
+		WiFiTagModel model = new WiFiTagModel();
 		NdefMessage msg = NfcReadWrite.readNfcData(tag);
 		NdefRecord records[] = msg.getRecords();
-		
-		if(null != records && 3 == records.length){
+
+		if (null != records && 3 == records.length) {
 			model.setId(TextRecord.parseNdefRecord(records[0]).getData());
-			model.setLatitude(TextRecord.parseNdefRecord(records[1]).getData());
-			model.setLongitude(TextRecord.parseNdefRecord(records[2]).getData());
+			model.setSsid(TextRecord.parseNdefRecord(records[1]).getData());
+			model.setPassword(TextRecord.parseNdefRecord(records[2]).getData());
 			return model;
 		}
 		return null;

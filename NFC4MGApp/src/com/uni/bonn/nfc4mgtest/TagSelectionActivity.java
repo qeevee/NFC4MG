@@ -46,6 +46,9 @@ public class TagSelectionActivity extends Activity implements OnClickListener {
 							startActivity(intent);
 							break;
 						case 2:
+							intent = new Intent(TagSelectionActivity.this,
+									BluetoothTagActivity.class);
+							startActivity(intent);
 							break;
 						default:
 							break;

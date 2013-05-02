@@ -7,7 +7,7 @@ package com.uni.bonn.nfc4mg.tagmodels;
  *
  */
 
-public class GroupModel {
+public class GroupTagModel {
 
 	//Represents the id of a group. Every id value is prefixed by 'grp_'
 	String _id;

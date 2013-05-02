@@ -10,6 +10,7 @@ import android.nfc.Tag;
 
 import com.uni.bonn.nfc4mg.TextRecord;
 import com.uni.bonn.nfc4mg.UriRecord;
+import com.uni.bonn.nfc4mg.constants.TagConstants;
 import com.uni.bonn.nfc4mg.exception.NfcTagException;
 import com.uni.bonn.nfc4mg.exception.TagModelException;
 import com.uni.bonn.nfc4mg.tagmodels.InfoTagModel;
@@ -50,8 +51,8 @@ public class InfoTag {
 			throw new TagModelException("Tag Id is not defined.");
 
 		// id prefix check
-		if (!id.startsWith("info_"))
-			model.setId("info_" + model.getId());
+		if (!id.startsWith(TagConstants.TAG_TYPE_INFO_PREFIX))
+			model.setId(TagConstants.TAG_TYPE_INFO_PREFIX + model.getId());
 
 		// check MIME is supported or not
 		if (!MIME_MAP.containsKey(model.getMime()))

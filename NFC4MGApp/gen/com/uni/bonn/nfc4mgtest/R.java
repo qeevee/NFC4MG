@@ -17,43 +17,40 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int card_a=0x7f020000;
-        public static final int card_j=0x7f020001;
-        public static final int card_k=0x7f020002;
-        public static final int card_nfc=0x7f020003;
-        public static final int card_q=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int nfc_bg=0x7f020006;
+        public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000a;
-        public static final int choice=0x7f080000;
-        public static final int data=0x7f080009;
-        public static final int id=0x7f080002;
-        public static final int latitude=0x7f080003;
-        public static final int longitude=0x7f080004;
-        public static final int mime=0x7f080008;
-        public static final int nfcStatus=0x7f080007;
-        public static final int read=0x7f080005;
-        public static final int selection=0x7f080001;
-        public static final int write=0x7f080006;
+        public static final int action_settings=0x7f08000c;
+        public static final int choice=0x7f080006;
+        public static final int data=0x7f08000b;
+        public static final int id=0x7f080000;
+        public static final int latitude=0x7f080008;
+        public static final int longitude=0x7f080009;
+        public static final int macId=0x7f080001;
+        public static final int mime=0x7f08000a;
+        public static final int nfcStatus=0x7f080005;
+        public static final int passKey=0x7f080002;
+        public static final int read=0x7f080003;
+        public static final int selection=0x7f080007;
+        public static final int write=0x7f080004;
     }
     public static final class layout {
-        public static final int choice=0x7f030000;
-        public static final int gps_tag=0x7f030001;
-        public static final int main=0x7f030002;
+        public static final int bt_tag=0x7f030000;
+        public static final int choice=0x7f030001;
+        public static final int gps_tag=0x7f030002;
+        public static final int main=0x7f030003;
     }
     public static final class menu {
         public static final int info_tag=0x7f070000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        public static final int action_settings=0x7f040001;
+        public static final int app_name=0x7f040000;
+        public static final int hello_world=0x7f040002;
     }
     public static final class style {
         /** 
